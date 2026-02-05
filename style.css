@@ -1,0 +1,106 @@
+:root {
+  --bg-main: #0f172a;
+  --bg-section: #111827;
+  --bg-card: #1f2933;
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --accent: #22c55e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: #020617;
+  border-bottom: 1px solid #1f2937;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.nav-link {
+  color: var(--text-muted) !important;
+  margin-left: 1rem;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--text-main) !important;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ===== HOME ===== */
+#home {
+  padding-top: 8rem;
+  background: linear-gradient(180deg, #020617, #0f172a);
+}
+
+.myimg {
+  border: 3px solid var(--accent);
+}
+
+/* ===== ABOUT & CONTACT ===== */
+#about,
+#contact {
+  background-color: var(--bg-section);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* ===== PROJECTS ===== */
+#projects {
+  background-color: #020617;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #020617;
+  border-top: 1px solid #1f2937;
+}
