@@ -42,7 +42,7 @@ section {
 /* ===== LOGO ===== */
 .logo img {
   width: 40px;
-  height: auto;
+  height: 40px;
 }
 
 /* ===== NAV DESKTOP ===== */
@@ -220,4 +220,5 @@ footer {
 .sosialIcons a:hover img {
   color: white;
   transition: 0.5s;
+
 }
