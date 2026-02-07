@@ -1,121 +1,179 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Nadhif Hilman Aufa</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Nadhif Hilman Aufa</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
 
-  <!-- AOS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-  <div class="container">
-    <span class="logo">ndhifhaf</span>
-    <div class="navbar-nav ms-auto">
-      <a class="nav-link" href="#home">Home</a>
-      <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#projects">Projects</a>
-      <a class="nav-link" href="#contact">Contact</a>
-    </div>
-  </div>
-</nav>
-
-<!-- HOME -->
-<section id="home" class="text-center">
-  <img src="" width="180" class="rounded-circle myimg mb-3" alt="Foto Profil">
-  <h1>Nadhif Hilman Aufa</h1>
-  <p>
-    Anak IT yang suka ngoprek jaringan, sistem, dan hal teknis di balik layar 🚀
-  </p>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <h2 class="text-center mb-4">Tentang Aku</h2>
-    <div class="row justify-content-center text-center">
-      <div class="col-md-5 mb-3" data-aos="fade-right">
-        <p>
-          Halo! Aku Nadhif. Aku lebih nyaman kerja di balik layar dan fokus ke
-          hal-hal teknis yang butuh ketelitian, terutama soal jaringan dan sistem.
-        </p>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="logo">
+        <img src="img/letter-n.png" alt="logo" />
       </div>
-      <div class="col-md-5 mb-3" data-aos="fade-left">
-        <p>
-          Saat ini aku terus belajar lewat proyek-proyek kecil dan eksplorasi
-          mandiri. Belum jago, tapi selalu penasaran dan mau terus berkembang 😄
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="container">
-    <h2 class="text-center mb-4">Proyek yang Pernah Aku Kerjain</h2>
-    <div class="row">
-      <div class="col-md-4 mb-3" data-aos="flip-left">
-        <div class="card">
-          <img src="/img/network.jpg" class="card-img-top" alt="Project">
-          <div class="card-body">
-            <p class="card-text">
-              Proyek latihan seputar konfigurasi jaringan dan simulasi sederhana.
-              Fokus buat nambah jam terbang.
-            </p>
+      <nav class="nav-menu" id="navMenu">
+        <div class="close-btn" id="closeBtn">&times;</div>
+        <ul>
+          <li><a href="#home" class="nav-link myli">Home</a></li>
+          <li><a href="#about" class="nav-link myli">About</a></li>
+          <li><a href="#projects" class="nav-link myli">Projects</a></li>
+          <li><a href="#contact" class="nav-link myli">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </header>
+
+    <!-- HOME -->
+    <section id="home" class="text-center">
+      <img src="img/profile.jpg" width="230" class="rounded-circle mb-5" alt="Foto Profil" />
+      <h1>Nadhif Hilman Aufa</h1>
+      <p>Anak IT yang suka ngoprek jaringan, sistem, dan hal teknis di balik layar 🚀</p>
+
+      <!-- incons -->
+      <div class="sosialIcons">
+        <a href="https://www.instagram.com/ndhifhaf/"><img src="icons/instagram.png" alt="instagram"></a>
+        <a href="https://github.com/nadhifhilman"><img src="icons/github.png" alt="github"></a>
+        <a href="https://www.linkedin.com/in/nadhif-hilman-aufa-4bab17379/"><img src="icons/linkedin.png" alt="linkedin"></a>
+      </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <h2 class="text-center mb-5">Tentang Saya</h2>
+        <div class="row justify-content-center text-center">
+          <div class="col-md-5 mb-3" data-aos="fade-right">
+            <p>Halo! Aku Nadhif. Saya memiliki ketertarikan dan keahlian di bidang jaringan komputer, sistem komputer, dan IoT. Terbiasa ngoprek hal-hal teknis, mulai dari konfigurasi jaringan, perangkat komputer, sampai proyek-proyek IoT sederhana berbasis mikrokontroler. 
+              Aku lebih nyaman kerja di balik layar dan fokus ke hal-hal teknis yang butuh ketelitian, terutama soal jaringan dan sistem.</p>
+          </div>
+          <div class="col-md-5 mb-3" data-aos="fade-left">
+            <p>Saya merupakan lulusan SMK, dan selama sekolah banyak belajar hal praktis yang langsung bisa diterapkan di lapangan. Saya senang bekerja di balik layar, fokus pada detail, dan terus belajar teknologi baru untuk mengembangkan kemampuan saya. 
+              Saat ini aku terus belajar lewat proyek-proyek kecil dan eksplorasi mandiri. Belum jago, tapi selalu penasaran dan mau terus berkembang 😄</p>
+          </div>
+           <div class="col-md-4 mb-4" data-aos="fade-left">
+            <p>Di luar dunia IT, saya punya hobi memancing. Buat saya, memancing melatih kesabaran, fokus, dan ketelitian. Hobi tersebut ternyata sangat kepakai juga saat ngoprek jaringan dan troubleshooting sistem.</p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <h2 class="text-center mb-4">Yuk, Ngobrol 👋</h2>
-    <p class="text-center mb-4">
-      Kalau mau tanya, diskusi, atau sekadar say hi, tinggal kirim pesan aja.
-    </p>
-
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <input class="form-control mb-3" placeholder="Nama">
-        <input class="form-control mb-3" placeholder="Email">
-        <textarea class="form-control mb-3" placeholder="Pesan"></textarea>
-        <button class="btn btn-success w-100">Kirim Pesan</button>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="text-center mb-4">Proyek yang Pernah Aku Kerjain</h2>
+        <div class="row">
+          <div class="col-md-4 mb-3" data-aos="flip-left">
+            <div class="card">
+              <img src="/img/network.jpg" class="card-img-top" alt="Project" />
+              <div class="card-body">
+                <p class="card-text">Proyek latihan seputar konfigurasi jaringan dan simulasi sederhana. Fokus buat nambah jam terbang.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- FOOTER -->
-<footer class="text-center p-3">
-  <p>
-    Website sederhana, masih terus dikembangin 👨‍💻 <br>
-    Dibuat dengan ❤️ oleh <strong>Nadhif Hilman Aufa</strong>
-  </p>
-</footer>
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="text-center mb-4">Yuk, Ngobrol 👋</h2>
+        <p class="text-center mb-4">Kalau mau tanya, diskusi, atau sekadar say hi, tinggal kirim pesan aja.</p>
 
-<!-- JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <input class="form-control mb-3" placeholder="Nama" />
+            <input class="form-control mb-3" placeholder="Email" />
+            <textarea class="form-control mb-3" placeholder="Pesan"></textarea>
+            <button class="btn btn-success w-100">Kirim Pesan</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center p-3">
+      <p>
+        Website sederhana, masih terus dikembangin 👨‍💻 <br />
+        Dibuat oleh <strong>Nadhif Hilman Aufa</strong>
+      </p>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true });
+    </script>
+
+    <!-- contact -->
 <script>
-  AOS.init({ once: true });
-</script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyGFKAb99NPiTh-GirdRCHcsEmcMkA71gNEVheI9-GF7axYzwe4Y1vhd4zGJmdW0g5b3w/exec" ;
+      const form = document.forms["portofolio-contact-form"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".my-alert");
 
-</body>
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // ketika tombol submit diklik
+        // tampilkan tombol loading, hilangkan tombol kirim
+        btnKirim.classList.toggle("d-none");
+        btnLoading.classList.toggle("d-none");
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            // tampilkan tombol kirim, hilangkan tombol loading
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
+            // tampilkan Alert
+            myAlert.classList.toggle("d-none");
+            // reset
+            form.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+
+    <!-- navbar -->
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("navMenu");
+      const closeBtn = document.getElementById("closeBtn");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.add("active");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          navLinks.forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+    </script>
+  </body>
 </html>
