@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penjelasan Automation Python</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #0f172a);
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #e2e8f0;
+    }
+
+    .container {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      color: #38bdf8;
+    }
+
+    pre {
+      background: #020617;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+      color: #22c55e;
+    }
+
+    .step {
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #334155;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Penjelasan Script Automation Python
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2 style="text-align: center;">Langkah Penggunaan</h2>
+
+    <div class="step">1. Cari koordinat X dan Y posisi klik (Ketik python -m pyautogui diterminal)</div>
+    <div style="background:#020617;height:80px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#64748b;margin-bottom:10px;">
+      <img style="border-radius: 10px;" src="L1.png" alt="gambar 1">
+    </div>
+
+    <div class="step">2. Masukkan koordinat tersebut ke dalam kode program</div>
+    <div style="background:#020617;height:90px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#64748b;margin-bottom:10px;">
+      <img style="border-radius: 10px;" src="L2.png" alt="gambar 2">
+    </div>
+
+    <div class="step">3. Jalankan program dan siapkan WhatsApp Web / aplikasi chat / lainnya</div>
+    <div style="background:#020617;height:80px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#64748b;margin-bottom:10px;">
+      <img style="border-radius: 10px;" src="L3.png" alt="gambar 3">
+    </div>
+
+    <div class="step">4. Program akan klik, mengetik, dan mengirim pesan otomatis</div>
+    <div style="background:#020617;height:120px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#64748b;margin-bottom:10px;">
+            <img style="border-radius: 10px;" src="L4.png" alt="gambar 4">
+    </div>
+
+    <div class="step">5. Tekan tombol 'C' untuk menghentikan program</div>
+    <div style="background:#020617;height:90px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#64748b;">
+      <img style="border-radius: 10px;" src="L5.png" alt="gambar 5">
+    </div>
+
+  </div>
+
+  <div class="card" style="text-align:center; margin-top: 20px;">
+    <h2>Kode Program</h2>
+    <pre style="text-align:left;display:inline-block;min-width:60%;">
+import pyautogui
+import keyboard
+import time
+
+# GANTI koordinat sesuai hasil pencarian
+x_pos = 1122 // contoh koordinat X
+y_pos = 692 // contoh koordinat Y
+
+print("automasi mulai dalam waktu 5 detik")
+time.sleep(5) // Beri waktu 5 detik untuk mempersiapkan aplikasi chat
+
+while not keyboard.is_pressed("c"): //Tekan tombol 'C' untuk menghentikan program
+    pyautogui.click(x=x_pos, y=y_pos)
+
+    pyautogui.typewrite("oke", interval=0.05) // 0.05 detik per karakter
+    time.sleep(1)  // tunggu 1 detik
+
+    pyautogui.press("enter")
+    </pre>
+  </div>
+
+</div>
+
+<footer>
+  Dibuat untuk pembelajaran automation Python
+</footer>
+
+</body>
+</html>

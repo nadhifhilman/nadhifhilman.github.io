@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Door Lock RFID</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      opacity: 0.8;
+    }
+
+    /* GAMBAR */
+    .image-placeholder {
+      background: rgba(255,255,255,0.1);
+      border: 2px dashed rgba(255,255,255,0.4);
+      height: auto;
+      min-height: 200px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      padding: 15px;
+    }
+
+    .image-placeholder img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    /* BUTTON */
+    .toggle-btn {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: #00ccaa;
+    }
+
+    /* CODE BOX */
+    .code-box {
+      background: #111;
+      border-radius: 15px;
+      padding: 20px;
+      overflow-x: auto;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      display: none; /* default disembunyikan */
+    }
+
+    pre {
+      color: #00ffcc;
+      font-size: 0.9rem;
+    }
+
+    /* PENJELASAN */
+    .content {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .content h2 {
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      margin-bottom: 10px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>Smart Door Lock RFID</h1>
+      <p>Sistem Keamanan Pintu Berbasis Arduino & RFID</p>
+    </header>
+
+    <!-- GAMBAR -->
+    <div class="image-placeholder">
+      <img src="skema.png" alt="Skema Project">
+    </div>
+
+    <!-- BUTTON TOGGLE CODE -->
+    <button class="toggle-btn" onclick="toggleCode()">Tampilkan / Sembunyikan Kode</button>
+
+    <!-- CODE PROGRAM -->
+    <div class="code-box" id="codeBox">
+<pre>
+// Kode Arduino (dipersingkat tampilan, tetap full saat dibuka)
+// Scroll di dalam box ini jika panjang
+
+#include &lt;Servo.h&gt;
+#include &lt;SPI.h&gt;
+#include &lt;MFRC522.h&gt;
+#include &lt;LiquidCrystal_I2C.h&gt;
+#include &lt;Wire.h&gt;
+
+Servo myservo;
+MFRC522 mfrc522(10, 9);
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+const int buzzer = 6;
+const int LED1 = 5;
+const int LED2 = 4;
+const int LED3 = 3;
+const int LED4 = 2;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(buzzer, OUTPUT);
+  pinMode(LED1, OUTPUT);
+  pinMode(LED2, OUTPUT);
+  pinMode(LED3, OUTPUT);
+  pinMode(LED4, OUTPUT);
+
+  SPI.begin();
+  mfrc522.PCD_Init();
+
+  myservo.attach(7);
+  myservo.write(0);
+
+  lcd.init();
+  lcd.backlight();
+  lcd.print("Smart Home Ready");
+}
+
+void loop() {
+  if (mfrc522.PICC_IsNewCardPresent() && mfrc522.PICC_ReadCardSerial()) {
+    if (mfrc522.uid.uidByte[0] == 198) {
+      lcd.clear();
+      lcd.print("Pintu Terbuka");
+      myservo.write(135);
+      delay(2000);
+      myservo.write(0);
+    } else {
+      lcd.clear();
+      lcd.print("Akses Ditolak");
+    }
+  }
+}
+</pre>
+    </div>
+
+    <!-- PENJELASAN -->
+    <div class="content">
+      <h2>Penjelasan Program</h2>
+      <p>
+        Program ini merupakan sistem Smart Door Lock menggunakan RFID. Arduino membaca kartu RFID
+        dan mencocokkan UID kartu.
+      </p>
+      <p>
+        Jika kartu valid, maka servo akan membuka pintu, LED menyala, dan buzzer berbunyi.
+        Jika tidak valid, maka sistem akan menolak akses.
+      </p>
+      <p>
+        Komponen utama:
+        <br>- RFID RC522
+        <br>- Servo Motor
+        <br>- LCD I2C
+        <br>- LED dan Buzzer
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleCode() {
+      var code = document.getElementById("codeBox");
+      if (code.style.display === "none") {
+        code.style.display = "block";
+      } else {
+        code.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
